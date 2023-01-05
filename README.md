@@ -1,46 +1,65 @@
-# Getting Started with Create React App
+# 개인 프로젝트 - Pinterest.co.kr 웹사이트 클론
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Intro
+- Solo Project
+- 프로젝트 기간 19일 ( 2022.12.12 ~ 2023.01.05 ) [ 주말 제외: 제대로 프로젝트를 만진 기간은 약 14일 정도로 추정됩니다. ]
 
-## Available Scripts
+## Tool
+- Front-End : React ( typescript )
+- Back-End : NodeJS ( javascript )
+- Trello : 테이블 정리용
 
-In the project directory, you can run:
+### Login
+- 개인 이메일 로그인 ( 이메일 검사 X )
+- 구글 로그인
+- Redux에 로그인 정보 저장
 
-### `npm start`
+### Main
+- 첫 로그인 시 성별, 관심사 저장
+- Redux에 성별, 관심사 저장
+- 메인 화면에서 관심사에 맞는 Pin들만 보여줌
+- 관심사 검색 기능
+- 제목 검색 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### MyPage
+- 내가 생성한 핀 모음
+- 내가 저장한 핀 모음
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### PinPage
+- 이미지 전체보기 ( 새창 )
+- 핀 저장, 핀 저장 해제
+- 댓글올리기
+- 이미지 다운로드
 
-### `npm test`
+### EditPage
+- 이미지 추가하기 ( 필수 )
+- 제목 입력하기 ( 2글자 이상 필수 )
+- 내용 입력하기 ( 5글자 이상 필수 )
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 어려웠던 부분
+* 로그인 페이지 스크롤 부분
+핀터레스트의 스크롤을 내리고 올리는 부분에서 어려움이 있었습니다.
+또한, 브라우저의 크기에 맞춰 내용들이 맞춰지는 것은 완전 구현을 하지 못했습니다. ( 한번 움직일 때마다 맞춰지도록 설정 )
 
-### `npm run build`
+* Typescript의 첫 도입
+React에서 Typescript를 처음 사용해 보았습니다.
+Angular를 사요할 때 타입스크립트를 사용했었지만 12버전때까지 사용했던것과 느낌이 달랐습니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* MySQL의 두번째 도입
+MySQL연습을 위해 당분간 MySQL을 사용예정입니다.
+현재 두번쨰 도입이라 엉성한 점이 많이 있습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 무작정 시작
+이번 코드는 보이는대로 작업을 해봤습니다.
+뒷일은 생각하지 않고 만드는 식의 작업을 진행했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# 이번 작업을 통해서 #
+1. 이번 작업을 통해서 CSS의 새로운 내용을 깨닳았습니다. ( masonry Layout )
+2. window 객체에 대해 조금 더 잘 알게 되었습니다. ( URL, innerHeight 등등 )
+3. Typescript의 기본을 깨닳았습니다. ( 현재 코드에는 interface를 마구잡이로 사용했지만, 이후에는 한곳에서 관리를 하던가, 최상위 컴포넌트에서 사용한다던가 생각하게 되었고, 기본적인 타입지정 방법은 알게되었습니다. )
+4. * 무작정 시작했던 부분이 가장 큰 걸림돌이 되었습니다. 평소 상상해서 페이지를 만들때는 이것저것 따져가며 만드는데, 이번에 클론코딩이라 무작정 만들기를 시도해 보았습니다.
+그리고 무작정 만들때 생겨나는 오류들이 정말 많다는 것을 느꼇습니다.
+예를 들어 카드를 하나 만들어서 Props로 내려받아 메인페이지에 뿌렸습니다. 그런데, 같은 모양의 카드를 마이페이지에서 사용할떄는 props의 형태가 달라져 오류가 나는 현상이 발생했습니다. 물론 Props를 더 많이 사용해보기 위해서 무리하게 넣은 이유도 있었지만, 이런식으로 사용하면 안된다는 것을 이번에 제대로 깨닫게 되었습니다.
+헤더 같은 경우에도 통합헤더를 만들었으면 좋았을텐데, 메인에서만 제대로 작동하는 헤더를 만들어서 다른 페이지에서는 잠궈두는 방식으로 만들어야 하는 문제가 발생했습니다.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* 이번 코드를 통해서 역시 개발전에 개발환경을 구축하는 것도 중요하지만 규칙서, 컴포넌트 정리 등의 중요성을 다시한번 깨닫게 되었습니다. 이번 프로젝트는 여기서 마무리하게 되었으며, 다음 프로젝트에서는 더욱 발전된 코드를 만들 수 있을거란 생각이 들게 되었습니다.

@@ -1,0 +1,115 @@
+@import "./total";
+
+#pin_wrap {
+    width: 100%;
+    .pin_contents_wrap {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 1.5rem;
+        .pin_contents {
+            max-width: 580px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 10%) 0px 1px 16px 0px;
+            border-radius: 32px;
+            .pin_box_wrap {
+                .pin_box {
+                    .pin_image {
+                        position: relative;
+                        &:hover span { opacity: 1; }
+                        > img {}
+                        > span {
+                            display: inline-block;
+                            position: absolute;
+                            bottom: 1rem;
+                            left: 1rem;
+                            padding: .5rem 1rem;
+                            background: #FFF;
+                            border-radius: 24px;
+                            font-size: $font_size_300;
+                            font-weight: $font_weight_semibold;
+                            cursor: pointer;
+                            opacity: 0;
+                        }
+                    }
+                    .pin_information {
+                        padding: 1rem;
+                        .pin_info_header {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            .pin_list_wrap {
+                                display: flex;
+                                position: relative;
+                                .items {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 48px;
+                                    height: 48px;
+                                    margin: 1rem;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    &:hover {
+                                        background: #E9E9E9;
+                                    }
+                                }
+                                .item_list {
+                                    position: absolute;
+                                    top: 4rem;
+                                    left: 0;
+                                    border: 1px solid #DDD;
+                                    border-radius: 8px;
+                                    padding: .5rem;
+                                    background: #FFF;
+                                    > li {
+                                        padding: .2rem .4rem;
+                                        line-height: 2.5;
+                                        white-space: nowrap;
+                                        cursor: pointer;
+                                        &:hover {
+                                            background: #DDD;
+                                            border-radius: 8px;
+                                        }
+                                    }
+                                }
+                            }
+                            .pin_save_button_wrap {
+                                > button {
+                                    padding: .5rem 1rem;
+                                    background: $main_color;
+                                    color: #FFF;
+                                    border-radius: 24px;
+                                    cursor: pointer;
+                                }
+                                .btn_color {
+                                    background: #E9E9E9;
+                                }
+                            }
+                        }
+                        .pin_info_contents {
+                            margin-bottom: 1rem;
+                            > h2 {
+                                font-size: 36px;
+                                font-weight: $font_weight_bold;
+                            }
+                            > p {
+                                font-size: $font_size_300;
+                                font-weight: $font_weight_normal;
+                            }
+                        }
+                        .pin_comments_wrap {
+                            > h3 {
+                                font-size: $font_size_400;
+                                font-weight: $font_weight_semibold;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pin_bottom_wrap {}
+}
