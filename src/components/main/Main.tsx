@@ -76,6 +76,8 @@ export const Main = () => {
         setInterestArray(prev => [...prev, interestString]);
     }
 
+    console.log(interestArray);
+
     const interDetails = useCallback((detailAdd: UserDetailProps, interestArray: string[]) => {
         setDetailAdd({...detailAdd, "interest": JSON.stringify(interestArray)});
     }, [])
@@ -180,8 +182,8 @@ export const Main = () => {
                                                 interests.map((item) => (
                                                     <li key={item.id}>
                                                         {/* <div className={`${styles.interest_image_wrap}`} style={{borderRadius: userDetail.interest.find(el => el === String(item.id)) ? '16px' : '', border: userDetail.interest.find(el => el === String(item.id)) ? '3px solid #000' : ''}} onClick={() => onInterest(item.id)}> */}
-                                                        <div className={`${styles.interest_image_wrap}`} onClick={() => onInterest(item.id)}>
-                                                            <div className={styles.interest_image} style={{background: `url(${item.image})`, borderRadius: "16px", backgroundSize: "cover"}}>
+                                                        <div className={`${styles.interest_image_wrap}`} style={{ border: interestArray.find(el => el === String(item.id)) ? "3px solid transparent" : "" }} onClick={() => onInterest(item.id)}>
+                                                            <div className={styles.interest_image} style={{background: `url(${item.image})`, backgroundSize: "cover"}}>
                                                                 <span>
                                                                     {item.text}
                                                                 </span>
