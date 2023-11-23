@@ -99,7 +99,7 @@ export const PinContents = ({ pin, auth }: { pin: PinsProps, auth: UserProps}) =
                                 </div>
                                 {
                                     writer && listOpen && <ul className={styles.item_list}>
-                                            <li>핀 수정</li>
+                                            <li>핀 수정(미구현)</li>
                                             <li onClick={onDownload}>이미지 다운로드</li>
                                         </ul>
                                 }
